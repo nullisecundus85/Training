@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>12-Week Recomp App</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>12-Week Body Recomp</h1>
+    <button id="toggleTheme">Toggle Dark Mode</button>
+  </header>
+  <nav>
+    <button onclick="showTab('weeks')">Workouts</button>
+    <button onclick="showTab('nutrition')">Nutrition</button>
+    <button onclick="showTab('stack')">Stack</button>
+    <button onclick="showTab('tracking')">Tracking</button>
+  </nav>
+  <main>
+    <section id="weeks" class="tab active">
+      <h2>Weekly Plan</h2>
+      <div class="week-tabs"></div>
+      <a href="resources/MASTER_PLAN.pdf" target="_blank">View Full PDF</a>
+    </section>
+    <section id="nutrition" class="tab">
+      <h2>Nutrition Plan</h2>
+      <p>Calories: 2868 | Protein: 237g | Carbs: 286g | Fat: 86g</p>
+      <ul>
+        <li>Meal 1: Eggs, oatmeal, fruit</li>
+        <li>Meal 2: Shake</li>
+        <li>Meal 3: Chicken + rice</li>
+        <li>Meal 4: Eggs + almonds</li>
+        <li>Meal 5: Steak/fish + potato</li>
+      </ul>
+    </section>
+    <section id="stack" class="tab">
+      <h2>Research Stack</h2>
+      <p><strong>Weeks 1–6:</strong> Test E/C + Dbol/Tbol</p>
+      <p><strong>Weeks 7–12:</strong> Test E + Masteron</p>
+      <p><strong>PCT:</strong> Clomid + Nolvadex</p>
+      <p><strong>HGH:</strong> 2–4 IU/day, AM fasted + PM</p>
+    </section>
+    <section id="tracking" class="tab">
+      <h2>Tracking</h2>
+      <label for="weight">Weight (lbs): </label>
+      <input id="weight" type="number" />
+      <button onclick="saveWeight()">Save</button>
+      <canvas id="weightChart" width="300" height="150"></canvas>
+      <h3>Workout Log</h3>
+      <textarea id="log" placeholder="Log your workout..."></textarea>
+      <button onclick="saveLog()">Save Log</button>
+      <button onclick="exportLog()">Export Log</button>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
